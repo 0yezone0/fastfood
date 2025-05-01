@@ -2,22 +2,22 @@ import React, { useState, useRef } from 'react';
 import { FaHome, FaShoppingCart } from 'react-icons/fa';
 
 const categories = [
-  { name: 'Cupcake', image: '/seafood.png' },
+  { name: 'Burger', image: '/hamburger.png' },
   { name: 'Sea Food', image: '/seafood.png' },
   { name: 'Juice', image: '/seafood.png' },
-  { name: 'Nước Giải Khát', image: '/nuoc giai khat/nuoc ngot/coca.png' },
+  { name: 'Nước Giải Khát', image: '/nuoc giai khat.png' },
   { name: 'Orange Juice', image: '/seafood.png' },
-  { name: 'Combo Siêu Tiết Kiệm', image: '/seafood.png' },
+  { name: 'Combo Siêu Tiết Kiệm', image: '/combo tiet kiem.png' },
 ];
 
 const products = [
   // Burger
-  { id: 1, name: 'Hamburger', price: 123, image: '/hamburger.png', category: 'Cupcake' },
-  { id: 2, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Cupcake' },
-  { id: 3, name: 'Grilled squid satay', price: 321, image: '/seafood.png', category: 'Cupcake' },
-  { id: 4, name: 'Grilled squid satay', price: 122, image: '/hamburger.png', category: 'Cupcake' },
-  { id: 5, name: 'Grilled squid satay', price: 125, image: '/hamburger.png', category: 'Cupcake' },
-  { id: 6, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Cupcake' },
+  { id: 1, name: 'Buger Thịt Bò', price: 45, image: '/burger/burger bo.png', category: 'Burger' },
+  { id: 2, name: 'Burger Thịt Gà Giòn', price: 40, image: '/burger/burger ga gion.png', category: 'Burger' },
+  { id: 3, name: 'Burger Nấm', price: 30, image: '/burger/burger nam.png', category: 'Burger' },
+  { id: 4, name: 'Burger Thịt Lợn', price: 45, image: '/burger/burger thit lon.png', category: 'Burger' },
+  { id: 5, name: 'Burger Trứng Gà', price: 20, image: '/burger/burger trung ga.png', category: 'Burger' },
+  { id: 6, name: 'Burger Trứng & Thịt Xông Khói', price: 48, image: '/burger/burger trung va thit xong khoi.png', category: 'Burger' },
   // Gà Rán & Gà Viên
   { id: 7, name: 'Hamburger', price: 123, image: '/hamburger.png', category: 'Sea Food' },
   { id: 8, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Sea Food' },
@@ -33,12 +33,12 @@ const products = [
   { id: 17, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Juice' },
   { id: 18, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Juice' },
   // Nước Giải Khát
-  { id: 19, name: 'Nước Ngọt Coca (Lon)', price: 123, image: '/nuoc giai khat/nuoc ngot/coca.png', category: 'Nước Giải Khát' },
-  { id: 20, name: 'Nước Ngọt Pepsi (Lon)', price: 123, image: '/nuoc giai khat/nuoc ngot/pepsi.png', category: 'Nước Giải Khát' },
-  { id: 21, name: 'Nước Ngọt 7 Up (Lon)', price: 123, image: '/nuoc giai khat/nuoc ngot/7up.png', category: 'Nước Giải Khát' },
-  { id: 22, name: 'Nước Ngọt Sprite (Lon)', price: 123, image: '/nuoc giai khat/nuoc ngot/sprite.png', category: 'Nước Giải Khát' },
-  { id: 23, name: 'Nước Ngọt Mirinda (Lon)', price: 123, image: '/nuoc giai khat/nuoc ngot/mirinda.png', category: 'Nước Giải Khát' },
-  { id: 24, name: 'Nước Tăng Lực Sting (Lon)', price: 123, image: '/nuoc giai khat/nuoc ngot/sting.png', category: 'Nước Giải Khát' },
+  { id: 19, name: 'Nước Ngọt Coca (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/coca.png', category: 'Nước Giải Khát' },
+  { id: 20, name: 'Nước Ngọt Pepsi (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/pepsi.png', category: 'Nước Giải Khát' },
+  { id: 21, name: 'Nước Ngọt 7 Up (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/7up.png', category: 'Nước Giải Khát' },
+  { id: 22, name: 'Nước Ngọt Sprite (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/sprite.png', category: 'Nước Giải Khát' },
+  { id: 23, name: 'Nước Ngọt Mirinda (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/mirinda.png', category: 'Nước Giải Khát' },
+  { id: 24, name: 'Nước Tăng Lực Sting (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/sting.png', category: 'Nước Giải Khát' },
   // Món Ăn Chính Khác
   { id: 25, name: 'Hamburger', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
   { id: 26, name: 'Grilled squid satay', price: 123, image: '/seafood.png', category: 'Orange Juice' },
@@ -47,7 +47,7 @@ const products = [
   { id: 29, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
   { id: 30, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
   // Combo Siêu Tiết Kiệm
-  { id: 31, name: 'Hamburger', price: 123, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
+  { id: 31, name: 'Combo 1: Burger Bò + Khoai Tây + Trà Tắc', price: 65, image: '/combo tiet kiem/combo 1.png', category: 'Combo Siêu Tiết Kiệm' },
   { id: 32, name: 'Grilled squid satay', price: 123, image: '/seafood.png', category: 'Combo Siêu Tiết Kiệm' },
   { id: 33, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
   { id: 34, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
@@ -107,6 +107,7 @@ const FastFoodMenu = () => {
 
   return (
     <div className="flex min-h-screen" style={{ backgroundColor: '#FFF8E1' }}>
+      <div className="flex w-full max-w-[1440px] mx-auto">
         {/* Popup chi tiết sản phẩm */}
         {selectedProduct && (
           <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
@@ -313,6 +314,7 @@ const FastFoodMenu = () => {
             </button>
           </div>
         </div>
+      </div>
     </div>
   );
 };
