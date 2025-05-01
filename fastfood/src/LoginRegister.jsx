@@ -23,7 +23,7 @@ const LoginRegister = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100" style={{ backgroundColor: '#FFF8E1' }}>
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold mb-6 text-center">
           {isLogin ? 'Đăng Nhập' : 'Đăng Ký'}
