@@ -3,56 +3,56 @@ import { FaHome, FaShoppingCart } from 'react-icons/fa';
 
 const categories = [
   { name: 'Burger', image: '/hamburger.png' },
-  { name: 'Sea Food', image: '/seafood.png' },
-  { name: 'Juice', image: '/seafood.png' },
+  { name: 'Gà Rán & Gà Viên', image: '/ga.png' },
+  { name: 'Món Ăn Kèm', image: '/seafood.png' },
+  { name: 'Món Chính Khác', image: '/mon chinh khac.png' },
   { name: 'Nước Giải Khát', image: '/nuoc giai khat.png' },
-  { name: 'Orange Juice', image: '/seafood.png' },
   { name: 'Combo Siêu Tiết Kiệm', image: '/combo tiet kiem.png' },
 ];
 
 const products = [
   // Burger
-  { id: 1, name: 'Buger Thịt Bò', price: 45, image: '/burger/burger bo.png', category: 'Burger' },
-  { id: 2, name: 'Burger Thịt Gà Giòn', price: 40, image: '/burger/burger ga gion.png', category: 'Burger' },
-  { id: 3, name: 'Burger Nấm', price: 30, image: '/burger/burger nam.png', category: 'Burger' },
-  { id: 4, name: 'Burger Thịt Lợn', price: 45, image: '/burger/burger thit lon.png', category: 'Burger' },
-  { id: 5, name: 'Burger Trứng Gà', price: 20, image: '/burger/burger trung ga.png', category: 'Burger' },
-  { id: 6, name: 'Burger Trứng & Thịt Xông Khói', price: 48, image: '/burger/burger trung va thit xong khoi.png', category: 'Burger' },
+  { id: 1, name: 'Buger Thịt Bò', price: 45000, image: '/burger/burger bo.png', category: 'Burger' },
+  { id: 2, name: 'Burger Thịt Gà Giòn', price: 40000, image: '/burger/burger ga gion.png', category: 'Burger' },
+  { id: 3, name: 'Burger Nấm', price: 30000, image: '/burger/burger nam.png', category: 'Burger' },
+  { id: 4, name: 'Burger Thịt Lợn', price: 45000, image: '/burger/burger thit lon.png', category: 'Burger' },
+  { id: 5, name: 'Burger Trứng Gà', price: 20000, image: '/burger/burger trung ga.png', category: 'Burger' },
+  { id: 6, name: 'Burger Trứng & Thịt Xông Khói', price: 48000, image: '/burger/burger trung va thit xong khoi.png', category: 'Burger' },
   // Gà Rán & Gà Viên
-  { id: 7, name: 'Hamburger', price: 123, image: '/hamburger.png', category: 'Sea Food' },
-  { id: 8, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Sea Food' },
-  { id: 9, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Sea Food' },
-  { id: 10, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Sea Food' },
-  { id: 11, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Sea Food' },
-  { id: 12, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Sea Food' },
+  { id: 7, name: 'Gà Rán (2 miếng)', price: 38000, image: '/ga/ga 2 mieng.png', category: 'Gà Rán & Gà Viên' },
+  { id: 8, name: 'Gà Rán (4 miếng)', price: 70000, image: '/ga/ga 4 mieng.png', category: 'Gà Rán & Gà Viên' },
+  { id: 9, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Gà Rán & Gà Viên' },
+  { id: 10, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Gà Rán & Gà Viên' },
+  { id: 11, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Gà Rán & Gà Viên' },
+  { id: 12, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Gà Rán & Gà Viên' },
   // Món Ăn Kèm
-  { id: 13, name: 'Hamburger', price: 123, image: '/hamburger.png', category: 'Juice' },
-  { id: 14, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Juice' },
-  { id: 15, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Juice' },
-  { id: 16, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Juice' },
-  { id: 17, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Juice' },
-  { id: 18, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Juice' },
+  { id: 13, name: 'Phô Mai Que (3 que)', price: 25000, image: '/mon an kem/pho mai que.png', category: 'Món Ăn Kèm' },
+  { id: 14, name: 'Salad Trộn Mayonnaise', price: 20000, image: '/mon an kem/salad tron mayonnaise.png', category: 'Món Ăn Kèm' },
+  { id: 15, name: 'Phô Mai Que (3 que)', price: 25000, image: '/mon an kem/pho mai que.png', category: 'Món Ăn Kèm' },
+  { id: 16, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Món Ăn Kèm' },
+  { id: 17, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Món Ăn Kèm' },
+  { id: 18, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Món Ăn Kèm' },
+  // Món Chính Khác
+  { id: 19, name: 'Cơm Bò Sốt Teriyaki', price: 59000, image: '/mon chinh khac/com bo teriyaki.png', category: 'Món Chính Khác' },
+  { id: 20, name: 'Grilled squid satay', price: 123000, image: '/seafood.png', category: 'Món Chính Khác' },
+  { id: 21, name: 'Mì Ý Sốt Cà Chua', price: 39000, image: '/mon chinh khac/mi y sot ca chua.png', category: 'Món Chính Khác' },
+  { id: 22, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Món Chính Khác' },
+  { id: 23, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Món Chính Khác' },
+  { id: 24, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Món Chính Khác' },
   // Nước Giải Khát
-  { id: 19, name: 'Nước Ngọt Coca (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/coca.png', category: 'Nước Giải Khát' },
-  { id: 20, name: 'Nước Ngọt Pepsi (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/pepsi.png', category: 'Nước Giải Khát' },
-  { id: 21, name: 'Nước Ngọt 7 Up (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/7up.png', category: 'Nước Giải Khát' },
-  { id: 22, name: 'Nước Ngọt Sprite (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/sprite.png', category: 'Nước Giải Khát' },
-  { id: 23, name: 'Nước Ngọt Mirinda (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/mirinda.png', category: 'Nước Giải Khát' },
-  { id: 24, name: 'Nước Tăng Lực Sting (Lon)', price: 15, image: '/nuoc giai khat/nuoc ngot/sting.png', category: 'Nước Giải Khát' },
-  // Món Ăn Chính Khác
-  { id: 25, name: 'Hamburger', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
-  { id: 26, name: 'Grilled squid satay', price: 123, image: '/seafood.png', category: 'Orange Juice' },
-  { id: 27, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
-  { id: 28, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
-  { id: 29, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
-  { id: 30, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Orange Juice' },
+  { id: 25, name: 'Nước Ngọt Coca (Lon)', price: 15000, image: '/nuoc giai khat/nuoc ngot/coca.png', category: 'Nước Giải Khát' },
+  { id: 26, name: 'Nước Ngọt Pepsi (Lon)', price: 15000, image: '/nuoc giai khat/nuoc ngot/pepsi.png', category: 'Nước Giải Khát' },
+  { id: 27, name: 'Nước Ngọt 7 Up (Lon)', price: 15000, image: '/nuoc giai khat/nuoc ngot/7up.png', category: 'Nước Giải Khát' },
+  { id: 28, name: 'Nước Ngọt Sprite (Lon)', price: 15000, image: '/nuoc giai khat/nuoc ngot/sprite.png', category: 'Nước Giải Khát' },
+  { id: 29, name: 'Nước Ngọt Mirinda (Lon)', price: 15000, image: '/nuoc giai khat/nuoc ngot/mirinda.png', category: 'Nước Giải Khát' },
+  { id: 30, name: 'Nước Tăng Lực Sting (Lon)', price: 15000, image: '/nuoc giai khat/nuoc ngot/sting.png', category: 'Nước Giải Khát' },
   // Combo Siêu Tiết Kiệm
-  { id: 31, name: 'Combo 1: Burger Bò + Khoai Tây + Trà Tắc', price: 65, image: '/combo tiet kiem/combo 1.png', category: 'Combo Siêu Tiết Kiệm' },
-  { id: 32, name: 'Grilled squid satay', price: 123, image: '/seafood.png', category: 'Combo Siêu Tiết Kiệm' },
-  { id: 33, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
-  { id: 34, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
-  { id: 35, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
-  { id: 36, name: 'Grilled squid satay', price: 123, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
+  { id: 31, name: 'Combo 1: Burger Bò + Khoai Tây + Trà Tắc', price: 65000, image: '/combo tiet kiem/combo 1.png', category: 'Combo Siêu Tiết Kiệm' },
+  { id: 32, name: 'Grilled squid satay', price: 123000, image: '/seafood.png', category: 'Combo Siêu Tiết Kiệm' },
+  { id: 33, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
+  { id: 34, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
+  { id: 35, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
+  { id: 36, name: 'Grilled squid satay', price: 123000, image: '/hamburger.png', category: 'Combo Siêu Tiết Kiệm' },
 ];
 
 const FastFoodMenu = () => {
@@ -118,7 +118,7 @@ const FastFoodMenu = () => {
                 <div className="flex-1">
                   <h2 className="text-xl font-bold mb-1">{selectedProduct.name}</h2>
                   <p className="text-sm text-gray-600 mb-2">SKU: {selectedProduct.id} | Category: {selectedProduct.category}</p>
-                  <p className="text-red-500 font-bold text-lg">Unit Price: Kr {selectedProduct.price},00</p>
+                  <p className="text-red-500 font-bold text-lg">Đơn giá: {selectedProduct.price.toLocaleString()}₫</p>
                   <div className="flex items-center mt-4 space-x-4">
                     <span className="font-semibold">Quantity:</span>
                     <button onClick={() => setQuantity((q) => Math.max(1, q - 1))} className="px-2 py-1 bg-gray-200 rounded text-lg">-</button>
@@ -152,7 +152,7 @@ const FastFoodMenu = () => {
                 className="w-full mt-6 bg-red-500 hover:bg-red-600 text-white text-lg py-3 rounded flex items-center justify-center space-x-2"
               >
                 <FaShoppingCart />
-                <span>Kr {(selectedProduct.price * quantity).toFixed(2)}</span>
+                <span>{(selectedProduct.price * quantity).toLocaleString()}₫</span>
               </button>
             </div>
           </div>
@@ -162,8 +162,10 @@ const FastFoodMenu = () => {
         <div className="flex-1 p-4">
           {/* Top navigation */}
           <div className="flex items-center mb-4">
-            <FaHome className="text-2xl mr-2" />
-            <span className="text-xl font-semibold">Back to home</span>
+            <div className="flex items-center space-x-3">
+              <FaHome className="text-2xl text-red-500" />
+              <span className="text-xl font-semibold">Trang Chủ</span>
+            </div>
           </div>
 
           {/* Category giao diện thanh danh mục */}
@@ -261,7 +263,7 @@ const FastFoodMenu = () => {
               >
                 <img src={product.image} alt={product.name} className="mx-auto h-24 object-contain mb-2" />
                 <h2 className="text-md font-semibold mb-2">{index + 1}. {product.name}</h2>
-                <p className="text-red-500 font-bold mb-2">Kr {product.price},00</p>
+                <p className="text-red-500 font-bold mb-2">{product.price.toLocaleString()}₫</p>
                 <button
                   className="bg-red-500 p-3 rounded-full text-white hover:bg-red-600 mx-auto"
                   onClick={(e) => {
@@ -291,7 +293,7 @@ const FastFoodMenu = () => {
                   <div>
                     <h4 className="font-medium">{item.name}</h4>
                     <p className="text-gray-500 text-sm">
-                      Kr {item.price} x {item.quantity} = <strong>Kr {item.price * item.quantity}</strong>
+                      {item.price.toLocaleString()}₫ x {item.quantity} = <strong>{(item.price * item.quantity).toLocaleString()}₫</strong>
                     </p>
                   </div>
                 </div>
@@ -306,8 +308,8 @@ const FastFoodMenu = () => {
           {/* Total and Payment */}
           <div className="mt-auto pt-4 border-t">
             <div className="flex justify-between text-lg font-bold mb-4">
-              <span>Total:</span>
-              <span>Kr {total.toFixed(2)}</span>
+              <span>Tổng tiền:</span>
+              <span>{total.toLocaleString()}₫</span>
             </div>
             <button className="w-full bg-red-500 text-white py-3 rounded-lg text-xl hover:bg-red-600">
               PAYMENT
