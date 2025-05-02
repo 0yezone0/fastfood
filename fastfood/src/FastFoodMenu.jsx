@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { FaHome, FaShoppingCart } from 'react-icons/fa';
+import {FaShoppingCart} from 'react-icons/fa';
 
 const categories = [
   { name: 'Burger', image: '/hamburger.png' },
@@ -106,7 +106,23 @@ const FastFoodMenu = () => {
     });
 
   return (
-    <div className="flex min-h-screen" style={{ backgroundColor: '#FFF8E1' }}>
+    <div style={{ backgroundColor: '#FFF8E1' }}>
+      {/* HEADER */}
+    <header className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center space-x-3">
+          <img src="/logo.png" alt="Logo" className="w-10 h-10 object-contain" /> {/* Đổi thành ảnh logo của bạn */}
+          <h1 className="text-2xl font-bold text-red-500">FastFood</h1>
+        </div>
+        <div className="flex space-x-4">
+          <button className="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500">Khuyến Mãi</button>
+          <button className="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500">Đăng Nhập</button>
+        </div>
+      </div>
+    </header>
+
+    {/* BODY CHÍNH */}
+    <div className="flex min-h-screen">
       <div className="flex w-full max-w-[1440px] mx-auto">
         {/* Popup chi tiết sản phẩm */}
         {selectedProduct && (
@@ -160,14 +176,6 @@ const FastFoodMenu = () => {
 
         {/* Left Content */}
         <div className="flex-1 p-4">
-          {/* Top navigation */}
-          <div className="flex items-center mb-4">
-            <div className="flex items-center space-x-3">
-              <FaHome className="text-2xl text-red-500" />
-              <span className="text-xl font-semibold">Trang Chủ</span>
-            </div>
-          </div>
-
           {/* Category giao diện thanh danh mục */}
           <div className="relative flex items-center justify-center mb-8">
             {/* Thanh danh mục – ẩn cuộn, hiển thị 4 mục */}
@@ -279,28 +287,51 @@ const FastFoodMenu = () => {
         </div>
 
         {/* Right Cart */}
-        <div className="w-1/3 bg-white p-4 shadow-lg flex flex-col h-screen">
+        <div className="w-1/3 bg-white p-4 shadow-lg flex flex-col" style={{ height: 'calc(100vh - 72px)' }}>
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold">Your Cart ({cart.length})</h2>
-            <button className="bg-blue-500 text-white px-3 py-1 rounded">DINE IN</button>
+            <h2 className="text-xl font-bold">Giỏ Hàng ({cart.length})</h2>
+            <div className="flex gap-2">
+              <button className="bg-blue-500 text-white px-3 py-1 rounded">DINE IN</button>
+              {cart.length > 0 && (
+                <button
+                  onClick={() => setCart([])}
+                  className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                >
+                  Xoá tất cả
+                </button>
+              )}
+            </div>
           </div>
           {/* Cart Items giao diện hiển thị giỏ hàng*/}
           <div className="space-y-4 h-[60vh] overflow-y-auto pr-2">
             {cart.map((item) => (
-              <div key={item.id} className="flex items-center justify-between border-b pb-2">
-                <div className="flex items-center space-x-2">
+              <div key={item.id} className="flex items-center justify-between border-b pb-3">
+                {/* Trái: Ảnh và mô tả */}
+                <div className="flex items-center space-x-3 w-[60%]">
                   <img src={item.image} alt={item.name} className="w-12 h-12 object-contain" />
                   <div>
-                    <h4 className="font-medium">{item.name}</h4>
-                    <p className="text-gray-500 text-sm">
+                    <h4 className="font-medium text-sm">{item.name}</h4>
+                    <p className="text-gray-500 text-xs">
                       {item.price.toLocaleString()}₫ x {item.quantity} = <strong>{(item.price * item.quantity).toLocaleString()}₫</strong>
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <button onClick={() => removeFromCart(item.id)} className="text-red-500 font-bold text-lg">-</button>
-                  <span className="mx-2">{item.quantity}</span>
-                  <button onClick={() => addToCart({ ...item, quantity: 1 })} className="text-green-500 font-bold text-lg">+</button>
+
+                {/* Phải: Các nút thao tác */}
+                <div className="flex items-center space-x-1">
+                  <button
+                    onClick={() => removeFromCart(item.id)}
+                    className="w-8 h-8 flex items-center justify-center text-red-500 font-bold border-2 border-red-400 rounded-md hover:bg-red-100"
+                  >
+                    -
+                  </button>
+                  <span className="px-2">{item.quantity}</span>
+                  <button
+                    onClick={() => addToCart({ ...item, quantity: 1 })}
+                    className="w-8 h-8 flex items-center justify-center text-green-500 font-bold border-2 border-green-400 rounded-md hover:bg-green-100"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
             ))}
@@ -317,6 +348,7 @@ const FastFoodMenu = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
