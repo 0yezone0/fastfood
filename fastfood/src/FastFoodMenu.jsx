@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import LoginRegister from './LoginRegister';
 import {FaShoppingCart} from 'react-icons/fa';
 
 const categories = [
@@ -65,6 +66,20 @@ const FastFoodMenu = () => {
   const [sideDishes, setSideDishes] = useState([]); // topping phụ kèm
   const [categoryIndex, setCategoryIndex] = useState(0);
   const categoryRefs = useRef([]);
+  const [showLogin, setShowLogin] = useState(false);
+
+  const handleLoginClick = () => {
+    setShowLogin(true);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLogin(false);
+    // thực hiện xử lý sau đăng nhập nếu cần
+  };
+
+  const handleCloseLogin = () => {
+    setShowLogin(false);
+  };
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -116,7 +131,7 @@ const FastFoodMenu = () => {
         </div>
         <div className="flex space-x-4">
           <button className="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500">Khuyến Mãi</button>
-          <button className="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500">Đăng Nhập</button>
+          <button onClick={handleLoginClick} className="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500">Đăng Nhập</button>
         </div>
       </div>
     </header>
@@ -348,6 +363,20 @@ const FastFoodMenu = () => {
           </div>
         </div>
       </div>
+      {/* Form đăng nhập hiển thị dạng overlay */}
+      {showLogin && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="relative">
+            <button
+              onClick={handleCloseLogin}
+              className="absolute top-2 right-2 text-gray-600 hover:text-black font-bold"
+            >
+              ✕
+            </button>
+            <LoginRegister onLoginSuccess={handleLoginSuccess} />
+          </div>
+        </div>
+      )}
     </div>
     </div>
   );
