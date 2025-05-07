@@ -1,5 +1,5 @@
 import React from 'react';
-import FastFoodMenu from './FastFoodMenu';
+import FastFoodMenu from './pages/FastFoodMenu';
 
 const App = () => {
   return <FastFoodMenu />;
