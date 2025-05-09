@@ -15,11 +15,9 @@ const FastFoodMenu = () => {
   const [showSortMenu, setShowSortMenu] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const [sideDishes, setSideDishes] = useState([]);
   const [categoryIndex, setCategoryIndex] = useState(0);
   const categoryRefs = useRef([]);
   const [showLogin, setShowLogin] = useState(false);
-
   const handleLoginClick = () => setShowLogin(true);
   const handleLoginSuccess = () => setShowLogin(false);
   const handleCloseLogin = () => setShowLogin(false);
@@ -50,7 +48,6 @@ const FastFoodMenu = () => {
   const openProductDetail = (product) => {
     setSelectedProduct(product);
     setQuantity(1);
-    setSideDishes([]);
   };
 
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -84,8 +81,6 @@ const FastFoodMenu = () => {
               product={selectedProduct}
               quantity={quantity}
               setQuantity={setQuantity}
-              sideDishes={sideDishes}
-              setSideDishes={setSideDishes}
               onClose={() => setSelectedProduct(null)}
               onAddToCart={(prod) => {
                 addToCart(prod);

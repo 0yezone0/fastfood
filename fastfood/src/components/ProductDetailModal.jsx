@@ -7,11 +7,10 @@ import { FaShoppingCart } from 'react-icons/fa';
  * Props:
  * - product: thông tin sản phẩm
  * - quantity, setQuantity: số lượng chọn mua
- * - sideDishes, setSideDishes: topping phụ
  * - onClose: đóng popup
  * - onAddToCart: thêm vào giỏ
  */
-const ProductDetailModal = ({ product, quantity, setQuantity, sideDishes, setSideDishes, onClose, onAddToCart }) => {
+const ProductDetailModal = ({ product, quantity, setQuantity, onClose, onAddToCart }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-6 w-[600px] shadow-lg relative">
@@ -29,21 +28,10 @@ const ProductDetailModal = ({ product, quantity, setQuantity, sideDishes, setSid
               <button onClick={() => setQuantity((q) => q + 1)} className="px-2 py-1 bg-gray-200 rounded text-lg">+</button>
             </div>
             <div className="mt-4">
-              <p className="font-semibold mb-1">Side dishes (*)</p>
-              <label className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  checked={sideDishes.includes('Vegetables')}
-                  onChange={() => {
-                    if (sideDishes.includes('Vegetables')) {
-                      setSideDishes(sideDishes.filter(d => d !== 'Vegetables'));
-                    } else {
-                      setSideDishes([...sideDishes, 'Vegetables']);
-                    }
-                  }}
-                />
-                <span>Vegetables</span>
-              </label>
+              <label for="note" class="font-semibold mb-1">Ghi chú thêm (nếu có):</label>
+              <textarea id="note" name="note" rows="3" placeholder="Ví dụ: Không hành, ít sốt,..." 
+              class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm p-2">
+              </textarea>
             </div>
           </div>
         </div>
