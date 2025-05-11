@@ -10,6 +10,7 @@ import { categories, products } from '../data/data';
 
 const FastFoodMenu = () => {
   const [cart, setCart] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Sea Food');
   const [sortOrder, setSortOrder] = useState(null);
   const [showSortMenu, setShowSortMenu] = useState(false);
@@ -21,6 +22,7 @@ const FastFoodMenu = () => {
   const handleLoginClick = () => setShowLogin(true);
   const handleLoginSuccess = () => setShowLogin(false);
   const handleCloseLogin = () => setShowLogin(false);
+
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -53,12 +55,16 @@ const FastFoodMenu = () => {
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const filteredProducts = products
-    .filter((p) => p.category === selectedCategory)
+    .filter((p) =>
+      p.category === selectedCategory &&
+      p.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
     .sort((a, b) => {
       if (sortOrder === 'asc') return a.price - b.price;
       if (sortOrder === 'desc') return b.price - a.price;
       return 0;
     });
+
 
   return (
     <div style={{ backgroundColor: '#FFF8E1' }}>
@@ -68,6 +74,17 @@ const FastFoodMenu = () => {
             <img src="/logo.png" alt="Logo" className="w-10 h-10 object-contain" />
             <h1 className="text-2xl font-bold text-red-500">FastFood</h1>
           </div>
+
+          <div className="flex-1 mx-6">
+            <input
+              type="text"
+              placeholder="Tìm kiếm món ăn..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
+          </div>
+
           <div className="flex space-x-4">
             <button onClick={handleLoginClick} className="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500">Đăng Nhập</button>
           </div>
