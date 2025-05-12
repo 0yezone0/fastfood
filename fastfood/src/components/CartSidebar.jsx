@@ -9,13 +9,12 @@ import React from 'react';
  * - total: tổng tiền
  * - setCart: xoá toàn bộ giỏ
  */
-const CartSidebar = ({ cart, addToCart, removeFromCart, total, setCart }) => {
+const CartSidebar = ({ cart, addToCart, removeFromCart, total, setCart, onCheckout }) => {
   return (
     <div className="w-1/3 bg-white p-4 shadow-lg flex flex-col" style={{ height: 'calc(100vh - 72px)' }}>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Giỏ Hàng ({cart.length})</h2>
         <div className="flex gap-2">
-          <button className="bg-blue-500 text-white px-3 py-1 rounded">DINE IN</button>
           {cart.length > 0 && (
             <button
               onClick={() => setCart([])}
@@ -57,7 +56,7 @@ const CartSidebar = ({ cart, addToCart, removeFromCart, total, setCart }) => {
           <span>Tổng tiền:</span>
           <span>{total.toLocaleString()}₫</span>
         </div>
-        <button className="w-full bg-red-500 text-white py-3 rounded-lg text-xl hover:bg-red-600">
+        <button  onClick={() => onCheckout(cart)} className="w-full bg-red-500 text-white py-3 rounded-lg text-xl hover:bg-red-600">
           PAYMENT
         </button>
       </div>

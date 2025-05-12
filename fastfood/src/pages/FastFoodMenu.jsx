@@ -35,6 +35,12 @@ const FastFoodMenu = () => {
     });
   };
 
+  const handleCheckout = (cart) => {
+    console.log("Thanh toán với các món:", cart);
+    // Gửi dữ liệu lên backend tại đây, ví dụ:
+    // axios.post("/api/checkout", cart)
+  }
+
   const removeFromCart = (productId) => {
     setCart((prevCart) =>
       prevCart
@@ -118,7 +124,7 @@ const FastFoodMenu = () => {
             <MenuList products={filteredProducts} onSelect={openProductDetail} onAddToCart={addToCart} />
           </div>
 
-          <CartSidebar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} total={total} setCart={setCart} />
+          <CartSidebar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} total={total} setCart={setCart} onCheckout={handleCheckout}/>
         </div>
         {showLogin && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
